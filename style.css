@@ -119,6 +119,7 @@ table {
 
 .game-over img {
     width: 100%;
+    max-width: 900px;
 }
 
 @keyframes zoomIn {
