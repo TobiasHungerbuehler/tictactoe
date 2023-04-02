@@ -63,12 +63,27 @@ function checkForWin() {
     checkVertical();
     checkDiagonal();
     if (winner) {
+        console.log('Gewonnen ',winner)
         gameOver = true;
-        setTimeout(gameOverDisplay, 1500) 
+        setTimeout(gameOverDisplay, 1500);
+        showWinner(winner); 
     } else {
         document.getElementById('overlay').classList.add('overlay');
         setTimeout(computerPlayer, 400)
     }
+}
+
+
+function showWinner(id) {
+    console.log(id);
+    if(id == 'circle') {
+        document.getElementById('winner-pannel').classList.remove('d-none');
+        document.getElementById('winner-circle').classList.remove('d-none');
+    }
+    if(id == 'cross') {
+        document.getElementById('winner-pannel').classList.remove('d-none');
+        document.getElementById('winner-cross').classList.remove('d-none');
+    } 
 }
 
 

@@ -10,84 +10,95 @@
 
 </head>
 <body>
+    <h1>TicTacToe</h1>
+    <div class="stage">
 
-    <div id="overlay"></div>
+        <div id="overlay"></div>
 
-    <div class="game-over d-none" id="game-over">
-        <img id="game-over-img" class="d-none" src="./img/game-over.png" alt="">
-        <button id="restart-btn" class="restart-btn d-none" onclick="restart()">Nochmal Spielen</button>
-    </div>
 
-    <div class="player-pannel">
-        <div  id="player-1">
-            <img class="" src="./img/circle.png" alt=""> Player 
+        <div class="game-over d-none" id="game-over">
+            <img id="game-over-img" class="d-none" src="./img/game-over.png" alt="">
+            <button id="restart-btn" class="restart-btn d-none" onclick="restart()">Nochmal Spielen</button>
         </div>
-        <div class="player-inactive" id="player-2">
-            <img class="" src="./img/cross.png" alt=""> Computer       
+
+        <div class="winner-pannel d-none" id="winner-pannel">
+
+            <div>
+                <img id="winner-circle" class="d-none" src="./img/circle.png" alt="">
+                <img id="winner-cross" class="d-none" src="./img/cross.png" alt="">
+            </div>
+            Gewinnt
+        </div>
+
+        <div class="player-pannel" id="player-pannel">
+            <div  id="player-1">
+                <img class="" src="./img/circle.png" alt=""> Player 
+            </div>
+            <div class="player-inactive" id="player-2">
+                <img class="" src="./img/cross.png" alt=""> Computer       
+            </div>
+        </div>
+        
+        
+        <div class="table-container">
+            <table> 
+                <tr>
+                    <td onclick="fillShape(0)">
+                        <img id="circle-0" class="shape d-none" src="./img/circle.png" alt="">
+                        <img id="cross-0" class="shape d-none" src="./img/cross.png" alt="">
+                    </td>
+                    <td onclick="fillShape(1)">
+                        <img id="circle-1" class="shape d-none" src="./img/circle.png" alt="">
+                        <img id="cross-1" class="shape d-none" src="./img/cross.png" alt="">
+                    </td>
+                    <td onclick="fillShape(2)">
+                        <img id="circle-2" class="shape d-none" src="./img/circle.png" alt="">
+                        <img id="cross-2" class="shape d-none" src="./img/cross.png" alt="">
+                    </td>
+                </tr> 
+                <tr>
+                    <td onclick="fillShape(3)">
+                        <img id="circle-3" class="shape d-none" src="./img/circle.png" alt="">
+                        <img id="cross-3" class="shape d-none" src="./img/cross.png" alt="">
+                    </td>
+                    <td onclick="fillShape(4)">
+                        <img id="circle-4" class="shape d-none" src="./img/circle.png" alt="">
+                        <img id="cross-4" class="shape d-none" src="./img/cross.png" alt="">
+                    </td>
+                    <td onclick="fillShape(5)">
+                        <img id="circle-5" class="shape d-none" src="./img/circle.png" alt="">
+                        <img id="cross-5" class="shape d-none" src="./img/cross.png" alt="">
+                    </td>
+                </tr> 
+                <tr>
+                    <td onclick="fillShape(6)">
+                        <img id="circle-6" class="shape d-none" src="./img/circle.png" alt="">
+                        <img id="cross-6" class="shape d-none" src="./img/cross.png" alt="">
+                    </td>
+                    <td onclick="fillShape(7)">
+                        <img id="circle-7" class="shape d-none" src="./img/circle.png" alt="">
+                        <img id="cross-7" class="shape d-none" src="./img/cross.png" alt="">
+                    </td>
+                    <td onclick="fillShape(8)">
+                        <img id="circle-8" class="shape d-none" src="./img/circle.png" alt="">
+                        <img id="cross-8" class="shape d-none" src="./img/cross.png" alt="">
+                    </td>
+                </tr> 
+                
+            </table>
+
+            <div id="line-0" class="line-0 horizontal-line" style="top: 64px;"></div>
+            <div id="line-1" class="line-1 horizontal-line" style="top: 204px;"></div>
+            <div id="line-2" class="line-2 horizontal-line" style="top: 344px;"></div>
+            
+            <div id="line-3" class="line-3 horizontal-line make-vertical" style="top: 205px; left: -140px;"></div>
+            <div id="line-4" class="line-4 horizontal-line make-vertical" style="top: 205px;"></div>
+            <div id="line-5" class="line-5 horizontal-line make-vertical" style="top: 205px; right: -138px;"></div> 
+            
+            <div id="line-6" class="line-6 horizontal-line" ></div>
+            <div id="line-7" class="line-7 horizontal-line" ></div>
         </div>
     </div>
-
-
-    <div class="table-container">
-        <table> 
-            <tr>
-                <td onclick="fillShape(0)">
-                    <img id="circle-0" class="shape d-none" src="./img/circle.png" alt="">
-                    <img id="cross-0" class="shape d-none" src="./img/cross.png" alt="">
-                </td>
-                <td onclick="fillShape(1)">
-                    <img id="circle-1" class="shape d-none" src="./img/circle.png" alt="">
-                    <img id="cross-1" class="shape d-none" src="./img/cross.png" alt="">
-                </td>
-                <td onclick="fillShape(2)">
-                    <img id="circle-2" class="shape d-none" src="./img/circle.png" alt="">
-                    <img id="cross-2" class="shape d-none" src="./img/cross.png" alt="">
-                </td>
-            </tr> 
-            <tr>
-                <td onclick="fillShape(3)">
-                    <img id="circle-3" class="shape d-none" src="./img/circle.png" alt="">
-                    <img id="cross-3" class="shape d-none" src="./img/cross.png" alt="">
-                </td>
-                <td onclick="fillShape(4)">
-                    <img id="circle-4" class="shape d-none" src="./img/circle.png" alt="">
-                    <img id="cross-4" class="shape d-none" src="./img/cross.png" alt="">
-                </td>
-                <td onclick="fillShape(5)">
-                    <img id="circle-5" class="shape d-none" src="./img/circle.png" alt="">
-                    <img id="cross-5" class="shape d-none" src="./img/cross.png" alt="">
-                </td>
-            </tr> 
-            <tr>
-                <td onclick="fillShape(6)">
-                    <img id="circle-6" class="shape d-none" src="./img/circle.png" alt="">
-                    <img id="cross-6" class="shape d-none" src="./img/cross.png" alt="">
-                </td>
-                <td onclick="fillShape(7)">
-                    <img id="circle-7" class="shape d-none" src="./img/circle.png" alt="">
-                    <img id="cross-7" class="shape d-none" src="./img/cross.png" alt="">
-                </td>
-                <td onclick="fillShape(8)">
-                    <img id="circle-8" class="shape d-none" src="./img/circle.png" alt="">
-                    <img id="cross-8" class="shape d-none" src="./img/cross.png" alt="">
-                </td>
-            </tr> 
     
-        </table>
-
-        <div id="line-0" class="horizontal-line" style="top: 64px;"></div>
-        <div id="line-1" class="horizontal-line" style="top: 204px;"></div>
-        <div id="line-2" class="horizontal-line" style="top: 344px;"></div>
-
-        <div id="line-3" class="horizontal-line make-vertical" style="top: 205px; left: -140px;"></div>
-        <div id="line-4" class="horizontal-line make-vertical" style="top: 205px;"></div>
-        <div id="line-5" class="horizontal-line make-vertical" style="top: 205px; right: -138px;"></div> 
-
-        <div id="line-6" class="horizontal-line" style="top: 205px; transform: rotate(45deg) scaleX(0.0);" ></div>
-        <div id="line-7" class="horizontal-line" style="top: 205px; transform: rotate(-45deg) scaleX(0.0);" ></div>
-    </div>
-
-
-
 </body>
 </html>
