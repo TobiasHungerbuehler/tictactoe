@@ -29,6 +29,7 @@ function checkMoves() {
     moves++;
     if(moves >= 9) {
         gameOverDisplay();
+        showWinner();
     }
 }
 
@@ -63,7 +64,6 @@ function checkForWin() {
     checkVertical();
     checkDiagonal();
     if (winner) {
-        console.log('Gewonnen ',winner)
         gameOver = true;
         setTimeout(gameOverDisplay, 1500);
         showWinner(winner); 
@@ -75,7 +75,6 @@ function checkForWin() {
 
 
 function showWinner(id) {
-    console.log(id);
     if(id == 'circle') {
         document.getElementById('winner-pannel').classList.remove('d-none');
         document.getElementById('winner-circle').classList.remove('d-none');
@@ -84,6 +83,9 @@ function showWinner(id) {
         document.getElementById('winner-pannel').classList.remove('d-none');
         document.getElementById('winner-cross').classList.remove('d-none');
     } 
+    if(!id){
+        document.getElementById('ended-draw-pannel').classList.remove('d-none');
+    }
 }
 
 
@@ -163,6 +165,10 @@ function removeGameOver(){
     document.getElementById('game-over').classList.add('d-none');
     document.getElementById('game-over-img').classList.add('d-none');
     document.getElementById('restart-btn').classList.add('d-none');
+    document.getElementById('winner-pannel').classList.add('d-none');
+    document.getElementById('winner-circle').classList.add('d-none');
+    document.getElementById('winner-cross').classList.add('d-none');
+    document.getElementById('ended-draw-pannel').classList.add('d-none'); 
     removeLines();
 }
 

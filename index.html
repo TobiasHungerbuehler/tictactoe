@@ -15,21 +15,12 @@
 
         <div id="overlay"></div>
 
-
         <div class="game-over d-none" id="game-over">
             <img id="game-over-img" class="d-none" src="./img/game-over.png" alt="">
             <button id="restart-btn" class="restart-btn d-none" onclick="restart()">Nochmal Spielen</button>
         </div>
 
-        <div class="winner-pannel d-none" id="winner-pannel">
-
-            <div>
-                <img id="winner-circle" class="d-none" src="./img/circle.png" alt="">
-                <img id="winner-cross" class="d-none" src="./img/cross.png" alt="">
-            </div>
-            Gewinnt
-        </div>
-
+        
         <div class="player-pannel" id="player-pannel">
             <div  id="player-1">
                 <img class="" src="./img/circle.png" alt=""> Player 
@@ -39,6 +30,19 @@
             </div>
         </div>
         
+        <div class="winner-pannel d-none" id="winner-pannel">
+            <div>
+                <img id="winner-circle" class="d-none" src="./img/circle.png" alt="">
+                <img id="winner-cross" class="d-none" src="./img/cross.png" alt="">
+            </div>
+            Gewinnt
+
+        </div>
+
+        <div id="ended-draw-pannel" class=" winner-pannel d-none">
+
+                Unentschieden
+        </div>
         
         <div class="table-container">
             <table> 
